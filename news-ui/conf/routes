@@ -1,0 +1,16 @@
+# Serve index page from public directory
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public/ui/assets/", file: Asset)
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file               controllers.Assets.versioned(path="/public/ui/", file: Asset)
+
+GET         /api/v1/:path       com.b2c.gated.controllers.ApiController.getApi(path:String)
+DELETE      /api/v1/:path       com.b2c.gated.controllers.ApiController.deleteApi(path:String)
+POST        /api/v1/:path       com.b2c.gated.controllers.ApiController.postApi(path:String)
+PUT         /api/v1/:path       com.b2c.gated.controllers.ApiController.putApi(path:String)
+
+POST         /api/v1/:path       com.b2c.gated.controllers.ApiController.login(path:String)
+
+
+GET         /       com.b2c.gated.controllers.ApiController.index
